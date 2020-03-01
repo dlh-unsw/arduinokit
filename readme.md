@@ -1,8 +1,8 @@
-#Arduino Kit Guide
+##Arduino Kit Guide
 
-This guide will go through the components in your arduino kit from UNSW Art & Design, providing links to example code and projects, as well as to more in-depth, technical information about the sensors and actuators included in the kits.
+This guide will go through the components in your arduino kit from UNSW Art & Design, providing links to example code and projects, as well as to more in-depth, technical information about the sensors and actuators included in the kits. If you have further questions about any components, ask someone in the Digital Learning Hub in E110 for more info.
 
-**NB: Never solder anything directly to the components in the kits, and remember to [bend legs/leads properly](https://www.youtube.com/watch?v=_MWwMQvWbOs). If you need a component soldered into a project, talk to Elias or someone at the Digital Learning Hub in E110 about how you can achieve the desired effect without soldering the part directly.**
+**NB: Never solder anything directly to the components in the kits, and remember to [bend legs/leads properly](https://www.youtube.com/watch?v=_MWwMQvWbOs). If you need a component soldered into a project, talk to staff in the Digital Learning in E110, or the Makerspace, about how you can achieve the desired effect without soldering the part directly.**
 
 ## Sensors (inputs)
 
@@ -16,21 +16,35 @@ The temperature sensor included with your kit provides an analog value (0-1023) 
 
 **Proximity sensor**
 
-The ultrasonic proximity sensors in the kits are a little quirky and can be tricky to work with in certain circumstances. The sensors rely on emitting a sound beyond the human hearing range and measuring how long it takes to bounce off whatever is in front of it to calculate how far away the object is. Many Arduino example projects make use of multiple instances of the `delay()` function to slow the Serial monitor, or adjust the speed of a Servo motor, for example. The `delay()` function halts all other functionality of the Arduino for the duration of time specified, and so it can lead to unpredictable behaviour from the sensor, which uses the time between sending a ping and receiving it back to calculate distance. The *Ping* example (File>Examples>Sensors>Ping) is a good starting point, but if your code utilises the `delay()` function elsewhere, see this Adafruit guide on how to [Ditch the delay()](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/ditch-the-delay).
+The ultrasonic proximity sensors in the kits are a little quirky and can be tricky to work with in certain circumstances. The sensors rely on emitting a sound beyond the human hearing range and measuring how long it takes to bounce off whatever is in front of it to calculate how far away the object is. 
+
+Keep in mind, many Arduino example projects make use of multiple instances of the `delay()` function to slow the Serial monitor, or adjust the speed of a Servo motor, for example. The `delay()` function halts all other functionality of the Arduino for the duration of time specified, and so it can lead to unpredictable behaviour from the sensor, which uses the time between sending a ping and receiving it back to calculate distance. The *Ping* example (File>Examples>Sensors>Ping) is a good starting point, **but** if your code utilises the `delay()` function elsewhere, see this Adafruit guide on how to [Ditch the delay()](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/ditch-the-delay).
 
 **Push button**
 
-Push buttons are useful for triggering some sort of event in your code, turning components on and off, and so on. When pressed, the button connects two parts of a circuit together. Occasionally the readings from these buttons can see some interference from various parts of your circuit and other electrical equipment, so if you are not getting consistent results, it is recommended to use a pullup resistor, which you can learn more about [here](https://www.baldengineer.com/arduino-internal-pull-up-resistor-tutorial.html).
+Push buttons are useful for triggering some sort of event in your code, turning components on and off, and so on. When pressed, the button connects two parts of a circuit together. Occasionally the readings from these buttons can see some interference from various parts of your circuit and other electrical equipment, so if you are not getting consistent results, it is recommended to use a pullup resistor, which you can learn more about [here](https://www.baldengineer.com/arduino-internal-pull-up-resistor-tutorial.html). Also see this information on [debouncing](https://www.arduino.cc/en/Tutorial/Debounce).
 
 **Potentiometer**
 
-Potentiometers are variable resistors with a knob to control the amount of voltage and current they allow to pass. Each of the outer pins can be connected to either power or ground and the middle pin will provide the output to your Arduino. See this basic [Arduino example](https://www.arduino.cc/en/tutorial/potentiometer), using a potentiometer to control the speed at which an LED blinks
+Potentiometers are variable resistors with a knob to control the amount of voltage and current they allow to pass. See this basic [Arduino example](https://www.arduino.cc/en/tutorial/potentiometer), using a potentiometer to control the speed at which an LED blinks.
+
+**Sound In**
+
+This sensor has a small microphone which provides an analog signal (0-1023) to your Arduino according to the loudness of sound it receives. This sensor is not intended to be used to record sounds, but to use the amplitude of any given sound to control other elements within your Arduino sketch, like, for example, using a clap to trigger some lights. See some examples [here](https://randomnerdtutorials.com/guide-for-microphone-sound-sensor-with-arduino/).
+
+**Photoresistor**
+
+Photoresistors change their resistance according to the amount of light they receive. See [this Arduino example](https://www.arduino.cc/en/Tutorial/AnalogInput) on using a photoresistor as an analog input.
+
+**Flex Sensor**
+
+The flex sensor bends in one direction and increases its resistance as it bends. See this [Instructables tutorial](https://www.instructables.com/id/How-to-use-a-Flex-Sensor-Arduino-Tutorial/) on how to wire it up and control the brightness of an LED.
 
 ## Actuators (outputs)
 
 **LEDs**
 
-Light Emitting Diodes are great for blinking and flashing in various projects, but they will burn out very quickly if they receive too much  power or current. Like other diodes, electrical energy will only flow through them in one direction, so it's important to have power connected to the postive (anode) leg, which is usually longer. [Read all about LEDs here](https://learn.adafruit.com/all-about-leds).
+Light Emitting Diodes are great for blinking and flashing in various projects, but they will burn out very quickly if they receive too much power or current. Like other diodes, electrical energy will only flow through them in one direction, so it's important to have power connected to the postive (anode) leg, which is usually longer. [Read all about LEDs here](https://learn.adafruit.com/all-about-leds).
 
 **Servo**
 
@@ -44,7 +58,7 @@ Resistors are passive components which *resist* the flow of electrical energy. S
 
 **Diodes**
 
-Diodes allow electrical energy to flow in only one direction. Any energy flowing in the "wrong" direction is blocked. They are often used with DC motors so as to block any voltage kickback when the motor stops. Read more [here](https://learn.sparkfun.com/tutorials/diodes/all).
+Diodes allow electrical energy to flow in only one direction. Any energy flowing in the "wrong" direction is blocked. They are often used with DC motors so as to block any kickback the motor may create. Read more [here](https://learn.sparkfun.com/tutorials/diodes/all).
 
 **Capacitors**
 
@@ -53,6 +67,3 @@ Capacitors can store electrical energy and are often used to avoid voltage spike
 **Transistors & MOSFETs**
 
 Transistors and MOSFETs are really handy when it comes to working with components that may require more power than your Arduino can provide. They can be thought of as switches or amplifiers, where you can use a digital output pin on your Arduino to connect a larger power source to components such as motors and LED strips. You can read a basic guide on the uses of transistors and MOSFETs [here](https://learn.adafruit.com/transistors-101/overview).
-
-
-
