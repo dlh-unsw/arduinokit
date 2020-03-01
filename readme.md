@@ -99,7 +99,7 @@ There are two types of Servos across the range of UNSW A&D Arduino kits. Some ar
 
 **Resistors**
 
-Resistors are passive components which *resist* the flow of electrical energy. Sparkfun's in-depth walkthrough of resistors can be found [here](https://learn.sparkfun.com/tutorials/resistors).
+Resistors are passive components which *resist* the flow of electrical energy. Sparkfun's in-depth walkthrough of resistors can be found [here](https://learn.sparkfun.com/tutorials/resistors). Take particular notice of the section on *decoding resistor markings and colour bands*, and see [this handy chart](https://cdn.sparkfun.com/assets/learn_tutorials/6/4/Resistors.png) to figure out what value your resistors are, as they are not necessarily consistent across all kits. If you need more resistors, or a specific value, ask at the Digital Learning Hub in E110.
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/diode.jpg" width="250">
