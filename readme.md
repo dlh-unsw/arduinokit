@@ -9,6 +9,7 @@ This guide will go through the components in your arduino kit from UNSW Art & De
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/tilt.jpg" width="250">
 </p>
+
 **Tilt sensor**
 
 The tilt sensor included with your kit provides an on/off (digital) signal which can be plugged into one of the Arduino's digital pins. Upright should return on/true/1, while tilted any other way will provide off/false/0. See Adafruit's [Reading Switch State with a Microcontroller](https://learn.adafruit.com/tilt-sensor/using-a-tilt-sensor) example, which shows how to connect the sensor on your breadboard, and provides code to debounce the signal to remove unwanted noise from the readings. For more info on debouncing, see [this example](https://www.arduino.cc/en/Tutorial/Debounce) on the Arduino website.
@@ -16,6 +17,7 @@ The tilt sensor included with your kit provides an on/off (digital) signal which
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/temp.jpg" width="250">
 </p>
+
 **Temperature sensor**
 
 The temperature sensor included with your kit provides an analog value (0-1023) relative to the temperature around it. The output pin can be plugged directly into an analog input on your Arduino, where you can convert the reading in voltage into a temperature. See [this Adafruit walkthrough](https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor), with included code, for how to convert the voltage to degrees celsius.
@@ -43,7 +45,6 @@ Push buttons are useful for triggering some sort of event in your code, turning 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/potentiometer.jpg" width="250">
 </p>
-
 
 **Potentiometer**
 
