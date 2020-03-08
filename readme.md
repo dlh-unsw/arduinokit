@@ -2,14 +2,13 @@
 
 This guide will go through the components in your arduino kit from UNSW Art & Design, providing links to example code and projects, as well as to more in-depth, technical information about the sensors and actuators included in the kits. If you have further questions about any components, ask someone in the Digital Learning Hub in E110 for more info.
 
-**NB: Never solder anything directly to the components in the kits, and remember to [bend legs/leads properly](https://www.youtube.com/watch?v=_MWwMQvWbOs). If you need a component soldered into a project, talk to staff in the Digital Learning in E110, or the Makerspace, about how you can achieve the desired effect without soldering the part directly.**
+**NB: Never solder anything directly to the components in the kits, and remember to [bend legs/leads properly](https://www.youtube.com/watch?v=_MWwMQvWbOs). If you need a component soldered into a project, talk to staff at the Digital Learning Hub in E110, or the Makerspace, about how you can achieve the desired effect without soldering the part directly.**
 
 ## Sensors (inputs)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/tilt.jpg" width="250">
 </p>
-
 **Tilt sensor**
 
 The tilt sensor included with your kit provides an on/off (digital) signal which can be plugged into one of the Arduino's digital pins. Upright should return on/true/1, while tilted any other way will provide off/false/0. See Adafruit's [Reading Switch State with a Microcontroller](https://learn.adafruit.com/tilt-sensor/using-a-tilt-sensor) example, which shows how to connect the sensor on your breadboard, and provides code to debounce the signal to remove unwanted noise from the readings. For more info on debouncing, see [this example](https://www.arduino.cc/en/Tutorial/Debounce) on the Arduino website.
@@ -20,7 +19,7 @@ The tilt sensor included with your kit provides an on/off (digital) signal which
 
 **Temperature sensor**
 
-The temperature sensor included with your kit provides an analog value (0-1023) relative to the temperature around it. The output pin can be plugged directly into an analog input on your Arduino, where you can convert the reading in voltage into a temperature. See [this Adafruit walkthrough](https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor), with included code, for how to convert the voltage to degrees celsius. 
+The temperature sensor included with your kit provides an analog value (0-1023) relative to the temperature around it. The output pin can be plugged directly into an analog input on your Arduino, where you can convert the reading in voltage into a temperature. See [this Adafruit walkthrough](https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor), with included code, for how to convert the voltage to degrees celsius.
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/ultrasonic.jpg" width="250">
@@ -28,9 +27,11 @@ The temperature sensor included with your kit provides an analog value (0-1023) 
 
 **Proximity sensor**
 
-The ultrasonic proximity sensors in the kits are a little quirky and can be tricky to work with in certain circumstances. The sensors rely on emitting a sound beyond the human hearing range and measuring how long it takes to bounce off whatever is in front of it to calculate how far away the object is. 
+The ultrasonic proximity sensors in the kits are a little quirky and can be tricky to work with in certain circumstances. The sensors rely on emitting a sound beyond the human hearing range and measuring how long it takes to bounce off whatever is in front of it to calculate how far away the object is.
 
-Keep in mind, many Arduino example projects make use of multiple instances of the `delay()` function to slow the Serial monitor, or adjust the speed of a Servo motor, for example. The `delay()` function halts all other functionality of the Arduino for the duration of time specified, and so it can lead to unpredictable behaviour from the sensor, which uses the time between sending a ping and receiving it back to calculate distance. The *Ping* example (File>Examples>Sensors>Ping) is a good starting point, **but** if your code utilises the `delay()` function elsewhere, see this Adafruit guide on how to [Ditch the delay()](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/ditch-the-delay).
+Keep in mind, many Arduino example projects make use of multiple instances of the `delay()` function to slow the Serial monitor, or adjust the speed of a Servo motor, for example. The `delay()` function halts all other functionality of the Arduino for the duration of time specified, and so it can lead to unpredictable behaviour from the sensor, which uses the time between sending a ping and receiving it back to calculate distance. The *Ping* example (File>Examples>Sensors>Ping) is a good starting point, **but** if your code utilises the `delay()` function elsewhere, see this Adafruit guide on how to [Ditch the `delay()`](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/ditch-the-delay).
+
+These sensors are not supported by the CRL Arduino-Max Package.
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/pushbutton.png" width="250">
@@ -115,7 +116,7 @@ Diodes allow electrical energy to flow in only one direction. Any energy flowing
 
 **Capacitors**
 
-Capacitors can store electrical energy and are often used to avoid voltage spikes damaging other components, or to otherwise smooth out signal flow. Read more [here](https://learn.sparkfun.com/tutorials/capacitors).
+Capacitors can store electrical energy and are often used to avoid voltage spikes damaging other components, or to otherwise smooth out a signal. Read more [here](https://learn.sparkfun.com/tutorials/capacitors).
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/transistormosfet.jpg" width="250">
