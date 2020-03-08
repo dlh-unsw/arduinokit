@@ -16,7 +16,6 @@ The tilt sensor included with your kit provides an on/off (digital) signal which
 <p align="left">
   <img src="https://raw.githubusercontent.com/dlh-unsw/arduinokit/master/images/temp.jpg" width="250">
 </p>
-
 **Temperature sensor**
 
 The temperature sensor included with your kit provides an analog value (0-1023) relative to the temperature around it. The output pin can be plugged directly into an analog input on your Arduino, where you can convert the reading in voltage into a temperature. See [this Adafruit walkthrough](https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor), with included code, for how to convert the voltage to degrees celsius.
